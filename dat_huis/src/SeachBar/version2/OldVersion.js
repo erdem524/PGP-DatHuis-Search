@@ -1,11 +1,5 @@
 import React, { useState } from "react";
 import "./style.css";
-// import Names from "./MOCK_DATA.json";
-// import SearchBar from "material-ui-search-bar";
-// import TextField from "@material-ui/core/TextField";
-// import Autocomplete from "@material-ui/lab/Autocomplete";
-// const nameList = Names.filter((obj) => obj.name);
-// console.log(`here i am`, nameList);
 export default function OldVersion({ props }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
@@ -27,20 +21,11 @@ export default function OldVersion({ props }) {
         value={searchTerm}
         onChange={handleChange}
       />
-      {/* <Autocomplete
-        id="combo-box-demo"
-        options={nameList}
-        getOptionLabel={(option) => option.name}
-        style={{ width: 300 }}
-        renderInput={(params) => (
-          <TextField {...params} label="Contact" variant="outlined" />
-        )}
-      /> */}
-      <div className="dropdown">
+      <ul>
         {searchResults.map((obj, index) => (
-          <p key={index}>{obj.name}</p>
+          <li key={index}>{obj.name}</li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 }
