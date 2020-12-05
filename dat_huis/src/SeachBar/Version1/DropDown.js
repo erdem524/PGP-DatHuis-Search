@@ -36,19 +36,19 @@ function DropDown({ options, id, label, prompt, value, onChange }) {
     <div className="dropdown">
       <div className="control" onClick={() => setOpen((prev) => !prev)}>
         <div className="selected-value">
-          <label class="custom-field">
+          <label className="custom-field">
             <input
               type="text"
               required
               ref={ref}
-              placeholder={value ? value[label] : prompt}
+              placeholder={open ? prompt : ""}
               value={displayValue()}
               onChange={(e) => {
                 setQuery(e.target.value);
                 onChange(null);
               }}
             />
-            <span class="placeholder">Contact</span>
+            <span className="placeholder">Contact</span>
           </label>
         </div>
         <div className={`arrow ${open ? "open" : null}`} />

@@ -4,6 +4,7 @@ import DropDown from "./Version1/DropDown";
 // import data from "./strangers.json";
 import Names from "./MOCK_DATA.json";
 import Material from "./version3/Material";
+
 // import OldVersion from "./version2/OldVersion";
 const nameList = Names.filter((obj) => obj.name);
 function Search() {
@@ -12,14 +13,14 @@ function Search() {
     <div style={{ width: 400, marginLeft: 50 }}>
       <DropDown
         options={nameList}
-        prompt="Contact"
+        prompt="Type or search..."
         id="id"
         label="name"
         value={value}
         onChange={(value) => setValue(value)}
       />
       <Material props={nameList} />
-      {/* <OldVersion props={nameList} /> */}
+      {/* <OldVersion data={nameList} /> */}
     </div>
   );
 }
